@@ -5,6 +5,10 @@
   <title>Let's Log In!</title>
 </head>
 <body>
+  <% if (flash.message) { %>
+    <%= flash.message %>
+  <% } %>
+  
   <%- body %>
 </body>
 </html>

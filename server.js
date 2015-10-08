@@ -4,11 +4,12 @@ var express = require('express'),
     mongoose = require('mongoose'),
     MONGOURI = process.env.mongouri || "mongodb://localhost/user-login-demo";
 
+server.use('/session', require('./controllers/session'));
+server.use('/users', require('./controllers/users'));
+
 server.get('/', function (req, res) {
   res.render('welcome');
 });
-
-
 
 mongoose.connect(MONGOURI);
 server.listen(PORT, function () {
